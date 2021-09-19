@@ -11,20 +11,42 @@
     padding-bottom: 20%;
     color: white;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    
 }
 
-.banner .display-6{
-    font-family: 'Roboto', sans-serif;
+ .banner .display-6{
+    font-family: viga;
+    margin-top: 120px;
     font-weight: 500px;
-    font-size: 100px;
+    font-size: 40px;
 }
 
 .banner .display-1{
     font-family: serif;
-    font-weight: 10px;
-    font-size: 30px;
+    font-weight: 200px;
+    font-size: 20px;
     margin-bottom: 20px;
 }
+
+/* destop */
+@media (min-width: 992px) { 
+    .banner .display-6{
+        font-family: viga;
+        font-weight: 700px;
+        font-size: 100px;
+    }
+    
+    .banner .display-1{
+        font-family: serif;
+        font-weight: 10px;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    
+ }
+
+
+
 
 .lingkaran{
     display: inline-block;
@@ -46,10 +68,10 @@
     object-fit: cover;
 }
 
+
 .tim img{
  
-
-    border: 10px solid #cccc ;
+    border: 10px solid #C52323 ;
 }
 
 a.sosial{
@@ -81,5 +103,15 @@ a.sosial{
 }
 
 h2{
-    font-family: 'Roboto', sans-serif;
+    font-family: viga;
+}
+
+.clearfix p {
+    margin-left: 5rem;
+   text-align: justify;
+}
+
+
+.staf {
+    background-color: #e6e6e6;
 }
