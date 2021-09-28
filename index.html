@@ -163,7 +163,7 @@
             <h2 class="display-3" >Tim Kami</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                 Dicta esse commodi mollitia id rem nesciunt excepturi, recusandae doloremque velit magni?</p>
-                <div class="row pt-4  gx-4 gy-4">
+                <div class="row pt-4 text-center">
                     <div class="col-md-4 text-center tim">
                         <img src="img/staf/iksan.jpg" alt="" height="300" class="rounded-circle mb-3">
                         <h4>Iksan</h4>
@@ -254,17 +254,17 @@
               <h2 class="display-3 text-center" >Kontak kami</h2>
               <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, quo?</p>
               <div class="row pb-3">
-                  <div class="col-md-6">
-                        <input class="form-control form-control-lg mb-2" type="text" placeholder="nama">
-                        <input class="form-control form-control-lg mb-2" type="email" placeholder="email">
-                        <input class="form-control form-control-lg mb-2" type="no. phone" placeholder="no. phone">
+                  <div class="col-md-6" name=submit-to-google-sheet>
+                        <input class="form-control form-control-lg mb-2" type="text" placeholder="nama" name="nama">
+                        <input class="form-control form-control-lg mb-2" type="email" placeholder="email" name="email">
+                        <input class="form-control form-control-lg mb-2" type="no. phone" placeholder="no. phone" name="no phone">
                   </div>
                   <div class="col-md-6">
-                      <textarea class="form-control form-control-lg" rows="5"></textarea>
+                      <textarea class="form-control form-control-lg" rows="5" name="pesan"></textarea>
                   </div>
               </div>
               <div class="col-md-3 mx-auto text-center">
-                  <button type="button" class="btn btn-danger btn-lg">Kirim pesan</button>
+                  <button type="submit" class="btn btn-danger btn-lg">Kirim pesan</button>
               </div>
           </div>
       </div>
@@ -275,5 +275,18 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" 
         crossorigin="anonymous">
     </script>
+
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwXluQFIkOjVWxLHLkiXJ9Gt3b_APMuq3GZmBygkad2xe87pSLigJwFaBEefVRHYf5b/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 </html>
